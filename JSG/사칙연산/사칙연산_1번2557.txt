@@ -1,0 +1,16 @@
+[2022/12/10]
+
+1. 2557 - Hello World
+
+<문제>
+Hello World!를 출력하시오.
+
+<입력>
+x
+
+
+<출력>
+Hello World!를 출력하시오.
+
+<소스>
+console.log('Hello World!');
