@@ -1,4 +1,4 @@
-2022/12/10
+[2022/12/10]~
 
 1. 2557 - Hello World
 <소스>
@@ -6,7 +6,7 @@ console.log('Hello World!');
 
 
 
-2. 10718 - We love kriii
+** 10718 - We love kriii
 <소스>
 for (let i = 0; i <= 1; i++) {
   console.log("강한친구 대한육군");
@@ -15,7 +15,7 @@ for (let i = 0; i <= 1; i++) {
 
 
 
-3. 1000 - A+B
+2. 1000 - A+B
 <소스>
 const fs = require('fs');
 // fs = FileSystem의 약자, 파일 처리를 하는 모듈로, 
@@ -40,7 +40,7 @@ console.log(A+B);
 
 
 
-4. 1001 - A-B
+3. 1001 - A-B
 <소스>
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().split(' ');
@@ -52,7 +52,7 @@ console.log(a - b);
 
 
 
-5. 10998 - A*B
+4. 10998 - A*B
 <소스>
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().split(' ');
@@ -64,7 +64,7 @@ console.log(a * b);
 
 
 
-6. 1008 - A/B
+5. 1008 - A/B
 <소스>
 const fs = require("fs");
 const input = fs.readFileSync("/dev/stdin").toString().split(' ');
@@ -76,7 +76,8 @@ console.log(a / b);
 
 
 
-7. 10869 - 사칙연산
+6. 10869 - 사칙연산
+<소스>
 const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().split(' ');
 
@@ -90,5 +91,12 @@ console.log(parseInt(A/B));
 console.log(A%B);
 
 
+[22/12/11]~
 
-8. 
+7. 10926 - ??!
+<소스>
+const fs = require('fs');
+
+const input = fs.readFileSync("/dev/stdin").toString().trim();
+
+console.log(`${input}??!`);
