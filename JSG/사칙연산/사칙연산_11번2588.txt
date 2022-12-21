@@ -1,0 +1,57 @@
+[2022/12/21]
+
+<문제>
+(세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
+
+	 472 (1)
+	*385 (2)
+-------------------
+	2360 (3)
+          3776   (4)
+        1416     (5)
+-------------------
+        181720  (6)	
+
+(1)과 (2)위치에 들어갈 세 자리 자연수가 주어질 때 (3), (4), (5), (6)위치에 들어갈 값을 구하는 프로그램을 작성하시오.
+
+<입력>
+첫째 줄에 (1)의 위치에 들어갈 세 자리 자연수가, 둘째 줄에 (2)의 위치에 들어갈 세자리 자연수가 주어진다.
+
+<출력>
+첫째 줄부터 넷째 줄까지 차례대로 (3), (4), (5), (6)에 들어갈 값을 출력한다.
+
+<소스>
+[방법1-입력 데이터를 숫자로 변환하여 저장한 뒤, 수학적 계산을 통해 답을 작성하는 방법]
+const fs=require('fs');
+const [num1, num2]=fs.readFileSync('/dev/stdin').toString().split('\n').map(Number);
+
+const oneNum=num2%10;
+const tenNum=Math.floor((num2%100)/10);
+const hundredNum=Math.floor(num2/100);
+
+console.log(num1*oneNum);
+console.log(num1*tenNum);
+console.log(num1*hundredNum);
+console.log(num1*num2);
+
+[방법2]
+해설 = 입력 데이터를 문자열 상태로 놔두고, split('')을 통해 하나의 문자씩 분리해서 배열로 저장한다. 
+그 후, reverse()로 배열을 뒤집어 연산 순서를 문제 사진과 같게 맞춰주고, map()으로 각 원소에 곱 연산을 한다. 
+따로 구한 A*B 결과는 push()를 사용하여 배열에 밀어넣어준다. 이들을 join()을 사용하여 출력.
+join('\n')은 배열 원소 구분자를 \n로 바꾼 뒤 전부 이어붙여 하나의 문자열로 만드는 기능을 한다.
+
+const fs = require('fs');
+const [A, B] = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
+
+const num1 = parseInt(A);
+const num2 = B.split('').map(Number); // [3, 8, 5]
+let result = num2.reverse().map((x) => x*num1); // [5*num1, 8*num1, 3*num1]
+result.push(num1*parseInt(B)); // [5*num1, 8*num1, 3*num1, num1*parseInt(B)]
+
+console.log(result.join('\n'));
+
+
+예시1) ["2", "3", "4"] --> join() --> 2,3,4
+예시2) ["2", "3", "4"] --> join("") --> 234
+예시3) ["2", "3", "4"] --> join("-") --> 2-3-4
+
