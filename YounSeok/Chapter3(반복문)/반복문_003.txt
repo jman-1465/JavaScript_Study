@@ -1,0 +1,24 @@
+//20230111
+반복문_003(합)
+https://www.acmicpc.net/problem/8393
+
+<문제>
+n이 주어졌을 때, 1부터 n까지 합을 구하는 프로그램을 작성하시오.
+
+<조건>
+첫째 줄에 n (1 ≤ n ≤ 10,000)이 주어진다.
+
+<결과>
+1부터 n까지 합을 출력한다.
+
+<코드>
+const fs = require('fs');
+const input = fs.readFileSync("/dev/stdin").toString();
+
+const n = parseInt(input);
+let sum = 0;
+
+for ( var i = 1; i < n+1; i++){
+    sum += i;
+	}
+console.log(sum);
